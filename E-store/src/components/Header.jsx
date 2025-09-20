@@ -7,7 +7,7 @@ import { ShoppingCart, Heart } from "lucide-react";
 function Header() {
   return (
     <header className="w-full shadow-md bg-white">
-        <div className="max-w-7xl mx-auto flex items-center justify-end px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
           <Link href="/" className="text-4xl font-bold text-pink-600">
             E-Store.
