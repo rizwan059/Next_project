@@ -1,14 +1,12 @@
-
-
+"use client"
 import React from 'react'
-import NavBar from './home/NavBar'
-
+import Navbar from './home/NavBar'
 
 function Header() {
   return (
     <>
     
-    <NavBar />
+    <Navbar />
     </>
   )
 }

@@ -1,57 +1,62 @@
-"use client"
-import React from 'react'
-import Link from 'next/link'
-import { ShoppingCart, Heart } from "lucide-react";
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { Search } from "lucide-react";
 
-function NavBar() {
+ function NavBar() {
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log("Searching for:", query);
+  };
+
   return (
-    <>
-    <header className="w-full shadow-md bg-white">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          {/* Logo */}
-          <Link href="/" className="text-4xl font-bold text-pink-600">
-            E-Store.
+    <nav className="bg-white dark:bg-gray-900 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo / Heading */}
+        <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">
+          MyWebsite
+        </h1>
+
+        {/* Links */}
+        <div className="flex space-x-6">
+          <Link
+            href="/"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600"
+          >
+            Home
           </Link>
-
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-pink-600">
-              Home
-            </Link>
-            <Link href="/shop" className="text-gray-700 hover:text-pink-600">
-              Shop
-            </Link>
-            {/* <Link href="/about" className="text-gray-700 hover:text-blue-600">
-              About
-            </Link> */}
-            {/* <Link href="/contact" className="text-gray-700 hover:text-blue-600">
-              Contact
-            </Link> */}
-          </nav>
-
-          {/* Actions */}
-          <div className="flex items-center space-x-5">
-            {/* Favourite */}
-            <button className="relative p-2 text-gray-700 hover:text-red-500">
-              <Heart className="w-6 h-6" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
-                3
-              </span>
-            </button>
-
-            {/* Cart */}
-            <button className="relative p-2 text-gray-700 hover:text-blue-600">
-              <ShoppingCart className="w-6 h-6" />
-              <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full px-1">
-                5
-              </span>
-            </button>
-          </div>
+          <Link
+            href="/store"
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600"
+          >
+            Store
+          </Link>
         </div>
-      </header>
-    
-    </>
-  )
+
+        {/* Search Bar */}
+        <form
+          onSubmit={handleSearch}
+          className="flex items-center bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full px-3 py-1"
+        >
+          <input
+            type="text"
+            placeholder="Search..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="bg-transparent outline-none px-2 text-gray-700 dark:text-gray-200"
+          />
+          <button
+            type="submit"
+            className="p-1 text-gray-500 hover:text-blue-600 transition"
+          >
+            <Search size={18} />
+          </button>
+        </form>
+      </div>
+    </nav>
+  );
 }
 
 export default NavBar
