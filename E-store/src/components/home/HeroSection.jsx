@@ -1,14 +1,17 @@
 import React from 'react'
-import Slider from './Slider'
+import Slider from '@/components/home/Slider'
 import styles from '@/components/home/hero.modules.css'
 
 function HeroSection() {
   return (
-    <div>HeroSection
+
+    <main>
+
+      <Slider />
+
+    </main>
 
 
-        <Slider />
-    </div>
   )
 }
 

@@ -15,7 +15,7 @@ import { Search } from "lucide-react";
     <nav className="bg-white dark:bg-gray-900 shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo / Heading */}
-        <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">
+        <h1 className="text-xl font-bold text-gray-800 dark:text-pink-300">
           MyWebsite
         </h1>
 
@@ -23,13 +23,13 @@ import { Search } from "lucide-react";
         <div className="flex space-x-6">
           <Link
             href="/"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-600"
+            className="text-gray-700 dark:text-gray-300 hover:text-pink-600"
           >
             Home
           </Link>
           <Link
             href="/store"
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-600"
+            className="text-gray-700 dark:text-gray-300 hover:text-pink-600"
           >
             Store
           </Link>
